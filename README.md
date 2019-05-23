@@ -5,7 +5,9 @@ This is a Perl script which uses libgd, libpng and/or libjpg to create graphics 
 
 Imagine you have 10 pins equally spaced in a circle.  This script tests every permutation of "step sizes" (the distance from one pin to the next pin in the sequence).  Wherever a perfect spirograph can be created (starting on pin 1 and ending on pin 1), that starcoil is saved.  After all iterations, all perfect starcoils are generated into graphics.  For example, with 10 pins and a step size of 4, you start at pin 1, go 4 steps to pin 5, then pin 9, 3, 7, and back to 1.  This creates a pentagram star.
 
-Very Interesting Findings So Far
+I do not use a step size of 1 as that is just wrapping a wire around the outside of the circle of pins and not of interest.
+
+Very Interesting Findings So Far:
 All factors of a number produce a star
   -The number of stars produced per factor appears to have a pattern, but I have not found it.
 Prime numbers have an equvalent number of star points and generate ~1/2 the number of stars.
