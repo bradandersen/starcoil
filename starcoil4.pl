@@ -15,9 +15,9 @@ else{
  print "Include text ([y]/n)? ";
  chomp($includetext=<>);
  $includetext ||="y";
- print "Include lines ([y]/n)? ";
+ print "Include lines (y/[n])? ";
  chomp($includelines=<>);
- $includelines ||="y";
+ $includelines ||="n";
  #print "$includelines\n";
 } 
 
@@ -28,10 +28,10 @@ print "Finding star patterns: ";
 
 
 $dest=1;
-$entry=1;
+$entry=2;
 $stars={};
 @destinations=(1);
-for($i=2;$i<($points/2)-0.5;$i++){
+for($i=2;$i<=($points/2)-0.5;$i++){
   do {
     $dest += $i;
     $dest > $points ? $dest-=$points : 1;
@@ -109,7 +109,7 @@ print "\n";
   }
 
 
-  my($filename)=sprintf("P%03d-T%03d-S%03d-I%03d.jpg",$points,$totalstarpoints,$starsteps,$star);
+  my($filename)=sprintf("P%03d-S%03d-T%03d-I%03d.jpg",$points,$starsteps,$totalstarpoints,$star);
   print "$filename\n";
   open(IMG,">$filename") or die "Can't open image file:";
   binmode IMG;
